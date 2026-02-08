@@ -109,6 +109,7 @@ export default function ResultsPage() {
     window.open(`/api/load-test/${testId}/export?format=json`, "_blank");
   }
   function exportPdf() {
+    if (!data) return;
     const w = window.open("", "_blank");
     if (!w) return;
     w.document.write(`
