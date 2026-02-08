@@ -89,9 +89,9 @@ export default function HomePage() {
     setDurationSeconds(t.durationSeconds);
     setRequestTimeoutMs(t.requestTimeoutMs);
     setLoadPatternType(t.loadPatternType);
-    if (t.rampUpSeconds != null) setRampUpSeconds(t.rampUpSeconds);
-    if (t.spikeConcurrency != null) setSpikeConcurrency(t.spikeConcurrency);
-    if (t.spikeDurationSeconds != null) setSpikeDurationSeconds(t.spikeDurationSeconds);
+    if ("rampUpSeconds" in t && t.rampUpSeconds != null) setRampUpSeconds(t.rampUpSeconds);
+    if ("spikeConcurrency" in t && t.spikeConcurrency != null) setSpikeConcurrency(t.spikeConcurrency);
+    if ("spikeDurationSeconds" in t && t.spikeDurationSeconds != null) setSpikeDurationSeconds(t.spikeDurationSeconds);
   }
 
   async function startTest() {
